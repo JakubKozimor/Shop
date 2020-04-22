@@ -1,0 +1,102 @@
+.content {
+    margin-top: 3px;
+    background-color: rgb(168, 168, 168);
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    width: 85%;
+    display: inline-block;
+    margin-top: 70px;
+}
+
+.search-menu {
+    height: 90px;
+    margin-top: 30px;
+    text-align: right;
+    margin-right: 8%;
+}
+
+.search {
+    display: inline-block;
+}
+
+.search-input {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 30px;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+}
+
+.search-button {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 30px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    margin-left: 15px;
+}
+
+.search-button:hover {
+    background-color: rgb(214, 214, 214);
+}
+
+.product {
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+    display: inline-block;
+    width: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.623);
+}
+
+.product:hover {
+    background-color: rgb(122, 122, 122);
+}
+
+main div img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.div-container {
+    padding: 10px;
+}
+@media only screen and (max-width:576px) {
+    .content {
+        width: 100%;
+        margin-top: auto;
+    }
+
+    .product {
+        display: block;
+        width: 300px;
+        margin: 10px auto;
+    }
+
+    .search{
+        display: block;
+        text-align: center;
+    }
+
+    .search-menu {
+        margin-right: 0;
+        height: 100%;
+    }
+
+    .search-input {
+        margin: 10px 0;
+        width: 300px;
+        height: 40px;
+    }
+
+    .search-button {
+        margin: 5px 0 15px 0;
+        width: 300px;
+        height: 40px;
+    }
+
+}
+

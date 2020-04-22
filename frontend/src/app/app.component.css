@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.page-content {
+    height: 100%;
+    width: 100%;
+}
+
+.con {
+    min-height: 100vh;
+    position: relative;
+}

@@ -12,6 +12,8 @@ public class Product {
     @Column(name = "product_id")
     private Long productId;
     @Column(name = "name")
+    private String name;
+    @Column(name = "description")
     private String description;
     @Column(name = "price")
     private BigDecimal price;
@@ -30,6 +32,14 @@ public class Product {
 
     public void setProductId(Long productId) {
         this.productId = productId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {

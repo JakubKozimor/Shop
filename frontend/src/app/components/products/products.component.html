@@ -1,91 +1,21 @@
 <main class="content">
-    <div class="search-menu">
-      <div class="search">
-        <input class="search-input" placeholder=" Wyszukaj">
+  <div class="search-menu">
+    <div class="search">
+      <input class="search-input" placeholder=" Wyszukaj">
+    </div>
+    <div class="search">
+      <button class="search-button">Szukaj</button>
+    </div>
+  </div>
+    <div class="product" *ngFor="let tempProduct of productList">
+      <img src="{{ tempProduct.imageUrl }}">
+      <div class="product-name">
+        <p>{{tempProduct.name}}</p>
       </div>
-      <div class="search">
-        <button class="search-button">Szukaj</button>
+      <div class="product-property">
+        <hr>
+        <p>{{ tempProduct.price}} zł</p>
+        <button class="add-to-basket-button btn btn-dark" href="#">Dodaj do koszyka</button>
       </div>
     </div>
-    <div class="product">
-      <img
-        src="https://ocdn.eu/pulscms-transforms/1/iW-k9kpTURBXy9mOTk1NzZhNTY3YjhlYjljZWQ3MDcxMGJjNWEzZTZhNy5qcGeTlQMAFs0C1M0Bl5MFzQMUzQG8kwmmNTk2MTk0BoGhMAE/gettyimages-954867550.jpg"
-        alt="Norway" style="width:100%">
-      <div class="div-container">
-        <p>Hardanger, Norway</p>
-      </div>
-    </div>
-    <div class="product">
-      <img
-        src="https://ocdn.eu/pulscms-transforms/1/iW-k9kpTURBXy9mOTk1NzZhNTY3YjhlYjljZWQ3MDcxMGJjNWEzZTZhNy5qcGeTlQMAFs0C1M0Bl5MFzQMUzQG8kwmmNTk2MTk0BoGhMAE/gettyimages-954867550.jpg"
-        alt="Norway" style="width:100%">
-      <div class="div-container">
-        <p>Hardanger, Norway</p>
-      </div>
-    </div>
-    <div class="product">
-      <img
-        src="https://ocdn.eu/pulscms-transforms/1/iW-k9kpTURBXy9mOTk1NzZhNTY3YjhlYjljZWQ3MDcxMGJjNWEzZTZhNy5qcGeTlQMAFs0C1M0Bl5MFzQMUzQG8kwmmNTk2MTk0BoGhMAE/gettyimages-954867550.jpg"
-        alt="Norway" style="width:100%">
-      <div class="div-container">
-        <p>Hardanger, Norway</p>
-      </div>
-    </div>
-    <div class="product">
-      <img
-        src="https://ocdn.eu/pulscms-transforms/1/iW-k9kpTURBXy9mOTk1NzZhNTY3YjhlYjljZWQ3MDcxMGJjNWEzZTZhNy5qcGeTlQMAFs0C1M0Bl5MFzQMUzQG8kwmmNTk2MTk0BoGhMAE/gettyimages-954867550.jpg"
-        alt="Norway" style="width:100%">
-      <div class="div-container">
-        <p>Hardanger, Norway</p>
-      </div>
-    </div>
-    <div class="product">
-      <img
-        src="https://ocdn.eu/pulscms-transforms/1/iW-k9kpTURBXy9mOTk1NzZhNTY3YjhlYjljZWQ3MDcxMGJjNWEzZTZhNy5qcGeTlQMAFs0C1M0Bl5MFzQMUzQG8kwmmNTk2MTk0BoGhMAE/gettyimages-954867550.jpg"
-        alt="Norway" style="width:100%">
-      <div class="div-container">
-        <p>Hardanger, Norway</p>
-      </div>
-    </div>
-    <div class="product">
-      <img
-        src="https://ocdn.eu/pulscms-transforms/1/iW-k9kpTURBXy9mOTk1NzZhNTY3YjhlYjljZWQ3MDcxMGJjNWEzZTZhNy5qcGeTlQMAFs0C1M0Bl5MFzQMUzQG8kwmmNTk2MTk0BoGhMAE/gettyimages-954867550.jpg"
-        alt="Norway" style="width:100%">
-      <div class="div-container">
-        <p>Hardanger, Norway</p>
-      </div>
-    </div>
-    <div class="product">
-      <img
-        src="https://ocdn.eu/pulscms-transforms/1/iW-k9kpTURBXy9mOTk1NzZhNTY3YjhlYjljZWQ3MDcxMGJjNWEzZTZhNy5qcGeTlQMAFs0C1M0Bl5MFzQMUzQG8kwmmNTk2MTk0BoGhMAE/gettyimages-954867550.jpg"
-        alt="Norway" style="width:100%">
-      <div class="div-container">
-        <p>Hardanger, Norway</p>
-      </div>
-    </div>
-    <div class="product">
-      <img
-        src="https://ocdn.eu/pulscms-transforms/1/iW-k9kpTURBXy9mOTk1NzZhNTY3YjhlYjljZWQ3MDcxMGJjNWEzZTZhNy5qcGeTlQMAFs0C1M0Bl5MFzQMUzQG8kwmmNTk2MTk0BoGhMAE/gettyimages-954867550.jpg"
-        alt="Norway" style="width:100%">
-      <div class="div-container">
-        <p>Hardanger, Norway</p>
-      </div>
-    </div>
-    <div class="product">
-      <img
-        src="https://ocdn.eu/pulscms-transforms/1/iW-k9kpTURBXy9mOTk1NzZhNTY3YjhlYjljZWQ3MDcxMGJjNWEzZTZhNy5qcGeTlQMAFs0C1M0Bl5MFzQMUzQG8kwmmNTk2MTk0BoGhMAE/gettyimages-954867550.jpg"
-        alt="Norway" style="width:100%">
-      <div class="div-container">
-        <p>Hardanger, Norway</p>
-      </div>
-    </div>
-    <div class="product">
-      <img
-        src="https://ocdn.eu/pulscms-transforms/1/iW-k9kpTURBXy9mOTk1NzZhNTY3YjhlYjljZWQ3MDcxMGJjNWEzZTZhNy5qcGeTlQMAFs0C1M0Bl5MFzQMUzQG8kwmmNTk2MTk0BoGhMAE/gettyimages-954867550.jpg"
-        alt="Norway" style="width:100%">
-      <div class="div-container">
-        <p>Hardanger, Norway</p>
-      </div>
-    </div>
-
-  </main>
+</main>

@@ -8,10 +8,17 @@ import { HttpClient} from '@angular/common/http';
 })
 export class ProductClientService {
 
+  private baseUrl = 'http://localhost:8080/products';
+
+
   constructor(private httpClient: HttpClient) { }
 
   public getAllProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>('http://localhost:8080/products/allProducts');
+    return this.httpClient.get<Product[]>(`${this.baseUrl}/allProducts`);
+  }
+
+  public getProductsByCategory(theCategoryId: number): Observable<Product[]> {
+    return this.httpClient.get<Product[]>(`http://localhost:8080/products/productsByCategory?categoryId=${theCategoryId}`);
   }
 }
 

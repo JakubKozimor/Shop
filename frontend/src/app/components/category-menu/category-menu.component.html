@@ -7,17 +7,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">Disabled</a>
+                <li *ngFor="let tempProductCategory of productCategories" class="nav-item" >
+                    <a class="nav-link" routerLink="/category/{{ tempProductCategory.categoryId }}" routerLinkActive="active-link">{{ tempProductCategory.name }}</a>
                 </li>
             </ul>
         </div>

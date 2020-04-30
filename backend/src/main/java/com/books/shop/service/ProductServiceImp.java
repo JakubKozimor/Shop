@@ -12,14 +12,20 @@ public class ProductServiceImp implements ProductService {
 
     ProductRepository productRepository;
 
-    @Autowired
     public ProductServiceImp(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
+
+    @Autowired
+
 
     @Override
     public List<Product> getListAllProducts() {
         return productRepository.findAll();
     }
 
+    @Override
+    public List<Product> getProductsByCategoryId(Long categoryId) {
+        return productRepository.findAllByCategoryId(categoryId);
+    }
 }

@@ -3,10 +3,7 @@ package com.books.shop.controller;
 import com.books.shop.entity.Product;
 import com.books.shop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +22,11 @@ public class ProductController {
     @GetMapping("/allProducts")
     public List<Product> getListAllProducts() {
         return productService.getListAllProducts();
+    }
+
+    @GetMapping("/productsByCategory")
+    public List<Product> getProductListByCategory(@RequestParam("categoryId") Long categoryId){
+        return productService.getProductsByCategoryId(categoryId);
     }
 
 }

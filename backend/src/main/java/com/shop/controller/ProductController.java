@@ -1,7 +1,7 @@
-package com.books.shop.controller;
+package com.shop.controller;
 
-import com.books.shop.entity.Product;
-import com.books.shop.service.ProductService;
+import com.shop.entity.Product;
+import com.shop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

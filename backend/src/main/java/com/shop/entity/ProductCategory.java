@@ -1,4 +1,4 @@
-package com.books.shop.entity;
+package com.shop.entity;
 
 import javax.persistence.*;
 

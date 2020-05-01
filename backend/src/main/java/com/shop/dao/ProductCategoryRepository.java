@@ -1,6 +1,6 @@
-package com.books.shop.dao;
+package com.shop.dao;
 
-import com.books.shop.entity.ProductCategory;
+import com.shop.entity.ProductCategory;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Long> {

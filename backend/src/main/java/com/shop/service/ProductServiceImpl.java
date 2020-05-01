@@ -1,18 +1,18 @@
-package com.books.shop.service;
+package com.shop.service;
 
-import com.books.shop.dao.ProductRepository;
-import com.books.shop.entity.Product;
+import com.shop.entity.Product;
+import com.shop.dao.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class ProductServiceImp implements ProductService {
+public class ProductServiceImpl implements ProductService {
 
     ProductRepository productRepository;
 
-    public ProductServiceImp(ProductRepository productRepository) {
+    public ProductServiceImpl(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 

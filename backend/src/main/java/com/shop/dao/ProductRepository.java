@@ -1,8 +1,7 @@
-package com.books.shop.dao;
+package com.shop.dao;
 
-import com.books.shop.entity.Product;
+import com.shop.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package com.books.shop.service;
+package com.shop.service;
 
-import com.books.shop.entity.ProductCategory;
+import com.shop.entity.ProductCategory;
 
 import java.util.List;
 

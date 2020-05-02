@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { HttpClient} from '@angular/common/http';
+import { map } from 'rxjs/operators';
+import { Product } from '../common/product';
 
 @Injectable({
   providedIn: 'root'
@@ -13,20 +15,24 @@ export class ProductClientService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getAllProducts(): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(`${this.baseUrl}/allProducts`);
+  public getAllProducts(thePage: number,
+                        thePageSize: number): Observable<GetResponseProduct> {
+    return this.httpClient.get<GetResponseProduct>(`${this.baseUrl}/allProducts?page=${thePage}&size=${thePageSize}`);
   }
 
-  public getProductsByCategory(theCategoryId: number): Observable<Product[]> {
-    return this.httpClient.get<Product[]>(`http://localhost:8080/products/productsByCategory?categoryId=${theCategoryId}`);
+  public getProductsByCategory(thePage: number,
+                               thePageSize: number,
+                               theCategoryId: number): Observable<GetResponseProduct> {
+    return this.httpClient.get<GetResponseProduct>(`${this.baseUrl}/productsByCategory?page=${thePage}&size=${thePageSize}&categoryId=${theCategoryId}`); 
   }
+
 }
 
-export interface Product {
-  productId: number;
-  name: string;
-  description: string;
-  price: number;
-  imageUrl: string;
-  categoryId: number;
+export interface GetResponseProduct {
+  content: Product[];
+  size: number;
+  totalElements: number;
+  totalPages: number;
+  number: number;
 }
+

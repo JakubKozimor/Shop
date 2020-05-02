@@ -1,11 +1,12 @@
 package com.shop.service;
 
 import com.shop.entity.Product;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
 public interface ProductService {
-    List<Product> getListAllProducts();
+    Page<Product> getListAllProducts(int page, int size);
 
-    List<Product> getProductsByCategoryId(Long categoryId);
+    Page<Product> getProductsByCategoryId(int page, int size, Long categoryId);
 }

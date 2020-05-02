@@ -7,14 +7,16 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductsComponent } from './components/products/products.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
-import { Routes, RouterModule} from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductClientService } from './services/product-client.service';
 
-const routes: Routes =[
-  {path: 'category/:categoryId',component: ProductsComponent},
-  {path: 'category',component: ProductsComponent},
-  {path: 'products',component: ProductsComponent},
-  {path: '', redirectTo: '/products', pathMatch: 'full'},
-  {path: '**', redirectTo: '/products', pathMatch: 'full'}
+const routes: Routes = [
+  { path: 'category/:categoryId', component: ProductsComponent },
+  { path: 'category', component: ProductsComponent },
+  { path: 'products', component: ProductsComponent },
+  { path: '', redirectTo: '/products', pathMatch: 'full' },
+  { path: '**', redirectTo: '/products', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -28,9 +30,10 @@ const routes: Routes =[
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [ProductClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

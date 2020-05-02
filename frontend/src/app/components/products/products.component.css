@@ -88,6 +88,28 @@ main div img:hover {
     margin: 0;
 }
 
+.pagination{
+    justify-content: center !important;
+    margin: 15px 0;
+}
+
+.product-quantity{
+    position: absolute;
+    right: 20px;
+}
+ngb-pagination /deep/ .page-item.active .page-link{
+    background: gray !important;
+    border-color: rgb(119, 119, 119) !important;
+    color: black;
+}
+ngb-pagination /deep/ .page-link{
+    color: black;
+}
+
+ngb-pagination /deep/ .page-link:focus{
+    box-shadow: 0 0 0 0.2rem rgba(87, 91, 95, 0.25) !important;
+}
+
 
 @media only screen and (max-width:576px) {
     .content {
@@ -123,5 +145,17 @@ main div img:hover {
         height: 40px;
     }
 
+
+}
+@media only screen and (max-width:915px) {
+    .pagination{
+        display: inline-block;
+    }
+    
+    .product-quantity{
+        display: inline-block;
+        position: relative;
+        margin: 15px 0;
+    }
 }
 

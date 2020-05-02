@@ -3,6 +3,7 @@ package com.shop.controller;
 import com.shop.entity.Product;
 import com.shop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,13 +21,16 @@ public class ProductController {
     }
 
     @GetMapping("/allProducts")
-    public List<Product> getListAllProducts() {
-        return productService.getListAllProducts();
+    public Page<Product> getListAllProducts(@RequestParam("page") int page,
+                                            @RequestParam("size") int size) {
+        return productService.getListAllProducts(page, size);
     }
 
     @GetMapping("/productsByCategory")
-    public List<Product> getProductListByCategory(@RequestParam("categoryId") Long categoryId){
-        return productService.getProductsByCategoryId(categoryId);
+    public Page<Product> getProductListByCategory(@RequestParam("page") int page,
+                                                  @RequestParam("size") int size,
+                                                  @RequestParam("categoryId") Long categoryId) {
+        return productService.getProductsByCategoryId(page, size, categoryId);
     }
 
 }

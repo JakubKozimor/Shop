@@ -43,6 +43,12 @@
     text-align: center;
 }
 
+.active-link{
+    font-weight: bold;
+}
+
+
+
 @media only screen and (max-width:576px) {
     .header {
         display: block;

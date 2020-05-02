@@ -1,6 +1,6 @@
 package com.shop.service;
 
-import com.shop.dao.ProductCategoryRepository;
+import com.shop.repository.ProductCategoryRepository;
 import com.shop.entity.ProductCategory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

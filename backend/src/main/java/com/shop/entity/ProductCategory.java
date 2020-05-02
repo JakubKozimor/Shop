@@ -20,10 +20,6 @@ public class ProductCategory {
         return categoryId;
     }
 
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
-    }
-
     public String getName() {
         return name;
     }

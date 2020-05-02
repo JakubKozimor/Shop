@@ -2,11 +2,12 @@ package com.shop.service;
 
 import com.shop.entity.Product;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
 public interface ProductService {
-    Page<Product> getListAllProducts(int page, int size);
+    Page<Product> getListAllProducts(Pageable pageable);
 
-    Page<Product> getProductsByCategoryId(int page, int size, Long categoryId);
+    Page<Product> getProductsByCategoryId(Pageable pageable, Long categoryId);
 }

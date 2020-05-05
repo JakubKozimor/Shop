@@ -1,0 +1,37 @@
+<div>
+    <nav class="navbar navbar-light">
+        <a class="navbar-brand">Filtruj</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavFilter" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavFilter">
+            <form [formGroup]="filterForm" (ngSubmit)="onSubmit(filterForm.value)">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label>Cena od:</label>
+                        <input type="text" class="form-control price" formControlName="priceFrom" placeholder="zł">
+                        <label>Cena do:</label>
+                        <input type="text" class="form-control price" formControlName="priceTo" placeholder="zł">
+                    </div>
+            
+                    <div class="form-group">
+                        <label>Wyszukaj:</label>
+                        <input type="text" class="form-control" formControlName="name">
+                    </div>
+            
+                    <div class="form-group">
+                        <label>Sortuj:</label>
+                        <select class="form-control" formControlName="order" >
+                            <option selected="true" value="asc">Alfabetycznie ▼</option>
+                            <option value="desc">Alfabetycznie ▲</option>
+                            <option value="price desc">Cena ▼</option>
+                            <option value="price asc">Cena ▲</option>
+                        </select>
+                    </div>
+            
+                    <button type="submit" class="btn btn-dark submit-button">Filtruj</button>
+                </div>
+            </form>
+        </div>
+      </nav>
+</div>

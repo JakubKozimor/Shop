@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ProductClientService } from './services/product-client.service';
+import { FilterComponent } from './components/filter/filter.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: 'category/:categoryId', component: ProductsComponent },
@@ -25,13 +27,16 @@ const routes: Routes = [
     CategoryMenuComponent,
     HeaderComponent,
     ProductsComponent,
-    FooterComponent
+    FooterComponent,
+    FilterComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ProductClientService],
   bootstrap: [AppComponent]

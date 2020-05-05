@@ -9,38 +9,6 @@
     margin-top: 70px;
 }
 
-.search-menu {
-    height: 90px;
-    margin-top: 30px;
-    text-align: right;
-    margin-right: 8%;
-}
-
-.search {
-    display: inline-block;
-}
-
-.search-input {
-    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 30px;
-    width: 200px;
-    border-radius: 10px;
-    border: none;
-}
-
-.search-button {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 30px;
-    width: 150px;
-    border-radius: 10px;
-    border: none;
-    margin-left: 15px;
-}
-
-.search-button:hover {
-    background-color: rgb(214, 214, 214);
-}
-
 .product {
     min-height: 370px;
     border-radius: 20px;
@@ -96,6 +64,7 @@ main div img:hover {
 .product-quantity{
     position: absolute;
     right: 20px;
+    bottom: 75px;
 }
 ngb-pagination /deep/ .page-item.active .page-link{
     background: gray !important;
@@ -122,30 +91,6 @@ ngb-pagination /deep/ .page-link:focus{
         width: 300px;
         margin: 10px auto;
     }
-
-    .search{
-        display: block;
-        text-align: center;
-    }
-
-    .search-menu {
-        margin-right: 0;
-        height: 100%;
-    }
-
-    .search-input {
-        margin: 10px 0;
-        width: 300px;
-        height: 40px;
-    }
-
-    .search-button {
-        margin: 5px 0 15px 0;
-        width: 300px;
-        height: 40px;
-    }
-
-
 }
 @media only screen and (max-width:915px) {
     .pagination{
@@ -156,6 +101,7 @@ ngb-pagination /deep/ .page-link:focus{
         display: inline-block;
         position: relative;
         margin: 15px 0;
+        bottom: 0;
     }
 }
 

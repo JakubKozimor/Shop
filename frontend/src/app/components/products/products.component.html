@@ -1,12 +1,5 @@
 <main class="content">
-  <div class="search-menu">
-    <div class="search">
-      <input class="search-input" placeholder=" Wyszukaj">
-    </div>
-    <div class="search">
-      <button class="search-button">Szukaj</button>
-    </div>
-  </div>
+  <app-filter></app-filter>
   <div class="product" *ngFor="let tempProduct of productList">
     <img src="{{ tempProduct.imageUrl }}">
     <div class="product-name">
@@ -29,7 +22,7 @@
     </ngb-pagination>
     <div class="product-quantity mt-2">
         <span class="mr-2">Ilość produktów</span>
-        <select (change)="updateProductsQuantity($event.target.value)">
+        <select class="form-control" (change)="updateProductsQuantity($event.target.value)">
           <option selected="true">8</option>
           <option>16</option>
           <option>32</option>

@@ -1,0 +1,74 @@
+.navbar{
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgb(204, 204, 204);
+}
+
+.navbar-brand {
+    font-size: 30px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.navbar-toggler-icon {
+    width: 100px;
+}
+
+.form-inline {
+    justify-content: center !important;
+}
+
+label {
+    padding: 10px;
+}
+
+.price{
+    width: 80px;
+}
+
+.form-group {
+    margin: 15px;
+}
+
+::-webkit-input-placeholder { 
+    text-align:right;
+}
+
+.submit-button{
+    width: 150px;
+}
+
+
+
+@media only screen and (max-width:576px){
+    .form-inline {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .price {
+        width: 100px !important;
+    }
+
+    .quantity{
+        width: 100px !important;
+    }
+
+    .form-control{
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .form-group {
+        margin: 5px;
+    }
+
+    label {
+        padding: 5px;
+    }
+
+    .submit-button{
+        margin-top: 15px;
+        width: 300px;
+    }
+}

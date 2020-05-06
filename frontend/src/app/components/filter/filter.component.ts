@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { ProductsComponent } from '../products/products.component';
+import { Filter } from 'src/app/common/filter';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filter',
@@ -9,8 +12,10 @@ import { FormBuilder } from '@angular/forms';
 export class FilterComponent implements OnInit {
   
   filterForm;
-
-  constructor(private formBuilder: FormBuilder) {
+  filter: Filter;
+  constructor(private routes: Router,
+    private formBuilder: FormBuilder,
+    private productComponent: ProductsComponent) {
   this.filterForm = this.formBuilder.group({
     priceFrom: 0,
     priceTo: 0,
@@ -24,6 +29,8 @@ export class FilterComponent implements OnInit {
   }
 
   onSubmit(customerData) {
+    this.filter = customerData;
+    this.productComponent.updateFilter(this.filter);
   }
 
 }

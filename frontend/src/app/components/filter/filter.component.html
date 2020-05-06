@@ -2,10 +2,10 @@
     <nav class="navbar navbar-light">
         <a class="navbar-brand">Filtruj</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavFilter" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span routerLink='/filter' class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavFilter">
-            <form [formGroup]="filterForm" (ngSubmit)="onSubmit(filterForm.value)">
+            <form [formGroup]="filterForm" (change)="onSubmit(filterForm.value)">
                 <div class="form-inline">
                     <div class="form-group">
                         <label>Cena od:</label>

@@ -1,7 +1,7 @@
 package com.shop.controller;
 
 import com.shop.entity.ProductCategory;
-import com.shop.service.ProductCategoryService;
+import com.shop.service.interfaces.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

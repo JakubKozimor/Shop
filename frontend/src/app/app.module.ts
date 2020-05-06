@@ -14,6 +14,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
+  { path: 'filter', component: ProductsComponent },
   { path: 'category/:categoryId', component: ProductsComponent },
   { path: 'category', component: ProductsComponent },
   { path: 'products', component: ProductsComponent },

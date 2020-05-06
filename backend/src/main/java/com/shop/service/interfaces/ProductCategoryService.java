@@ -1,4 +1,4 @@
-package com.shop.service;
+package com.shop.service.interfaces;
 
 import com.shop.entity.ProductCategory;
 

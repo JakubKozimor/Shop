@@ -94,5 +94,4 @@ public class Product {
             return new Product(name, description, price, imageUrl, categoryId);
         }
     }
-
 }

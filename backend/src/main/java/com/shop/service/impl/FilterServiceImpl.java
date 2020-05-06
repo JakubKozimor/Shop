@@ -1,6 +1,7 @@
 package com.shop.service.impl;
 
 import com.shop.entity.Product;
+import com.shop.filter.MinPriceFilter;
 import com.shop.filter.ProductFilter;
 import com.shop.filter.ProductNameFilter;
 import com.shop.models.ProductFilterModel;
@@ -34,9 +35,12 @@ public class FilterServiceImpl implements FilterService {
     }
 
     private List<Product> filterProducts(List<Product> listOfProducts, ProductFilterModel productFilterModel) {
-        if (!productFilterModel.getName().equals("")) {
+        if (!productFilterModel.getName().equals(""))
             listOfProducts = this.filterByCondition(new ProductNameFilter(productFilterModel.getName()), listOfProducts);
-        }
+
+        if(productFilterModel.getPriceFrom() != null)
+            listOfProducts = this.filterByCondition(new MinPriceFilter(productFilterModel.getPriceFrom()), listOfProducts);
+
         return listOfProducts;
     }
 

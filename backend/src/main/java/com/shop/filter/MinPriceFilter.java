@@ -14,7 +14,7 @@ public class MinPriceFilter implements ProductFilter {
 
     @Override
     public boolean filterProduct(Product product) {
-        int isGreater = product.getPrice().compareTo(minPrice);
+        int isGreater = product.getPrice().compareTo(this.minPrice);
         return isGreater >= 0;
     }
 }

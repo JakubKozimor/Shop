@@ -12,6 +12,6 @@ public class ProductNameFilter implements ProductFilter {
 
     @Override
     public boolean filterProduct(Product product) {
-        return product.getName().toLowerCase().contains(productName.toLowerCase());
+        return product.getName().toLowerCase().contains(this.productName.toLowerCase());
     }
 }

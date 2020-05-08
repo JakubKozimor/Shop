@@ -1,6 +1,7 @@
 package com.shop.service.impl;
 
 import com.shop.entity.Product;
+import com.shop.filter.MaxPriceFilter;
 import com.shop.filter.MinPriceFilter;
 import com.shop.filter.ProductFilter;
 import com.shop.filter.ProductNameFilter;
@@ -12,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,6 +42,9 @@ public class FilterServiceImpl implements FilterService {
 
         if(productFilterModel.getPriceFrom() != null)
             listOfProducts = this.filterByCondition(new MinPriceFilter(productFilterModel.getPriceFrom()), listOfProducts);
+
+        if(productFilterModel.getPriceTo() != null && !productFilterModel.getPriceTo().equals(BigDecimal.valueOf(0)))
+            listOfProducts = this.filterByCondition(new MaxPriceFilter(productFilterModel.getPriceTo()), listOfProducts);
 
         return listOfProducts;
     }

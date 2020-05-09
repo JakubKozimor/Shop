@@ -4,6 +4,7 @@ import com.shop.entity.Product;
 import com.shop.models.ProductFilterModel;
 import com.shop.service.interfaces.ProductSorterService;
 import com.shop.sort.ProductSorterByName;
+import com.shop.sort.ProductSorterByPrice;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +25,8 @@ public class ProductSorterServiceImpl implements ProductSorterService {
     private List<Product> sortByConditions(List<Product> listOfProducts, String orderBy, String sortOrder) {
         if (orderBy.equals("name"))
             listOfProducts.sort(new ProductSorterByName().sortProduct(listOfProducts, sortOrder));
+        if (orderBy.equals("price"))
+            listOfProducts.sort(new ProductSorterByPrice().sortProduct(listOfProducts, sortOrder));
         return listOfProducts;
     }
 }

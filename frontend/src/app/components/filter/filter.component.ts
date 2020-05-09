@@ -17,10 +17,10 @@ export class FilterComponent implements OnInit {
     private formBuilder: FormBuilder,
     private productComponent: ProductsComponent) {
   this.filterForm = this.formBuilder.group({
-    priceFrom: 0,
-    priceTo: 0,
+    priceFrom: undefined,
+    priceTo: undefined,
     name: '',
-    order: ''
+    order: "brak sortowania"
   });
   }
 

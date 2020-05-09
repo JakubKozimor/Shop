@@ -9,6 +9,7 @@ import com.shop.models.ProductFilterModel;
 import com.shop.repository.ProductRepository;
 import com.shop.service.interfaces.FilterService;
 import com.shop.service.interfaces.PageService;
+import com.shop.service.interfaces.ProductSorterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
@@ -22,18 +23,21 @@ public class FilterServiceImpl implements FilterService {
 
     ProductRepository productRepository;
     PageService pageService;
+    ProductSorterService productSorterService;
 
     @Autowired
-    public FilterServiceImpl(ProductRepository productRepository, PageService pageService) {
+    public FilterServiceImpl(ProductRepository productRepository, PageService pageService, ProductSorterService productSorterService) {
         this.productRepository = productRepository;
         this.pageService = pageService;
+        this.productSorterService = productSorterService;
     }
 
     @Override
     public Page<Product> getProductsWithFilters(ProductFilterModel productFilterModel) {
         List<Product> listOfAllProduct = productRepository.findAll();
         List<Product> listOfProductWithFilter = this.filterProducts(listOfAllProduct, productFilterModel);
-        return pageService.preparePage(listOfProductWithFilter, productFilterModel);
+        List<Product> listOfProductWithFilterAndSort = productSorterService.sortProducts(listOfProductWithFilter, productFilterModel);
+        return pageService.preparePage(listOfProductWithFilterAndSort, productFilterModel);
     }
 
     private List<Product> filterProducts(List<Product> listOfProducts, ProductFilterModel productFilterModel) {

@@ -2,7 +2,7 @@ package com.shop.controller;
 
 import com.shop.entity.Product;
 import com.shop.models.ProductFilterModel;
-import com.shop.service.interfaces.FilterService;
+import com.shop.service.interfaces.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/filter")
 public class FilterController {
 
-    FilterService filterService;
+    ProductService productService;
 
     @Autowired
-    public FilterController(FilterService filterService) {
-        this.filterService = filterService;
+    public FilterController(ProductService productService) {
+        this.productService = productService;
     }
 
     @PostMapping("/getProducts")
     public Page<Product> getProductsWithFilters(@RequestBody ProductFilterModel productFilterModel) {
-        return filterService.getProductsWithFilters(productFilterModel);
+        return productService.getProductsWithFilters(productFilterModel);
     }
 }

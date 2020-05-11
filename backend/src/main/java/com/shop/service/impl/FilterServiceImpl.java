@@ -6,12 +6,7 @@ import com.shop.filter.MinPriceFilter;
 import com.shop.filter.ProductFilter;
 import com.shop.filter.ProductNameFilter;
 import com.shop.models.ProductFilterModel;
-import com.shop.repository.ProductRepository;
 import com.shop.service.interfaces.FilterService;
-import com.shop.service.interfaces.PageService;
-import com.shop.service.interfaces.ProductSorterService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -21,33 +16,15 @@ import java.util.stream.Collectors;
 @Service
 public class FilterServiceImpl implements FilterService {
 
-    ProductRepository productRepository;
-    PageService pageService;
-    ProductSorterService productSorterService;
-
-    @Autowired
-    public FilterServiceImpl(ProductRepository productRepository, PageService pageService, ProductSorterService productSorterService) {
-        this.productRepository = productRepository;
-        this.pageService = pageService;
-        this.productSorterService = productSorterService;
-    }
-
     @Override
-    public Page<Product> getProductsWithFilters(ProductFilterModel productFilterModel) {
-        List<Product> listOfAllProduct = productRepository.findAll();
-        List<Product> listOfProductWithFilter = this.filterProducts(listOfAllProduct, productFilterModel);
-        List<Product> listOfProductWithFilterAndSort = productSorterService.sortProducts(listOfProductWithFilter, productFilterModel);
-        return pageService.preparePage(listOfProductWithFilterAndSort, productFilterModel);
-    }
-
-    private List<Product> filterProducts(List<Product> listOfProducts, ProductFilterModel productFilterModel) {
+    public List<Product> filterProducts(List<Product> listOfProducts, ProductFilterModel productFilterModel) {
         if (!productFilterModel.getName().equals(""))
             listOfProducts = this.filterByCondition(new ProductNameFilter(productFilterModel.getName()), listOfProducts);
 
-        if(productFilterModel.getPriceFrom() != null)
+        if (productFilterModel.getPriceFrom() != null)
             listOfProducts = this.filterByCondition(new MinPriceFilter(productFilterModel.getPriceFrom()), listOfProducts);
 
-        if(productFilterModel.getPriceTo() != null && !productFilterModel.getPriceTo().equals(BigDecimal.valueOf(0)))
+        if (productFilterModel.getPriceTo() != null && !productFilterModel.getPriceTo().equals(BigDecimal.valueOf(0)))
             listOfProducts = this.filterByCondition(new MaxPriceFilter(productFilterModel.getPriceTo()), listOfProducts);
 
         return listOfProducts;

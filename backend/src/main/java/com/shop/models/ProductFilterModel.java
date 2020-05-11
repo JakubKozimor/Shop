@@ -12,9 +12,6 @@ public class ProductFilterModel {
     private int page;
     private int size;
 
-    public ProductFilterModel() {
-    }
-
     private ProductFilterModel(BigDecimal priceFrom, BigDecimal priceTo, String name, String order, Long categoryId, int page, int size) {
         this.priceFrom = priceFrom;
         this.priceTo = priceTo;

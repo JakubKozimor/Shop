@@ -7,5 +7,5 @@ import org.springframework.data.domain.Page;
 import java.util.List;
 
 public interface PageService {
-    Page<Product>  preparePage(List<Product> listOfProduct, ProductFilterModel productFilterModel);
+    Page<Product> preparePage(List<Product> listOfProduct, ProductFilterModel productFilterModel);
 }

@@ -19,6 +19,6 @@ public class PageServiceImpl implements PageService {
         Pageable pageable = PageRequest.of(productFilterModel.getPage(), productFilterModel.getSize());
         int start = productFilterModel.getPage() * productFilterModel.getSize();
         int end = Math.min(start + productFilterModel.getSize(), listOfProduct.size());
-        return new PageImpl<>(listOfProduct.subList(start, end),pageable,listOfProduct.size());
+        return new PageImpl<>(listOfProduct.subList(start, end), pageable, listOfProduct.size());
     }
 }

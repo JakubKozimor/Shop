@@ -19,8 +19,7 @@ export class FilterComponent implements OnInit {
   this.filterForm = this.formBuilder.group({
     priceFrom: undefined,
     priceTo: undefined,
-    name: '',
-    order: "brak sortowania"
+    name: ''
   });
   }
 

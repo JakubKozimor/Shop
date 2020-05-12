@@ -7,16 +7,14 @@ public class ProductFilterModel {
     private BigDecimal priceFrom;
     private BigDecimal priceTo;
     private String name;
-    private String order;
     private Long categoryId;
     private int page;
     private int size;
 
-    private ProductFilterModel(BigDecimal priceFrom, BigDecimal priceTo, String name, String order, Long categoryId, int page, int size) {
+    private ProductFilterModel(BigDecimal priceFrom, BigDecimal priceTo, String name, Long categoryId, int page, int size) {
         this.priceFrom = priceFrom;
         this.priceTo = priceTo;
         this.name = name;
-        this.order = order;
         this.categoryId = categoryId;
         this.page = page;
         this.size = size;
@@ -32,10 +30,6 @@ public class ProductFilterModel {
 
     public String getName() {
         return name;
-    }
-
-    public String getOrder() {
-        return order;
     }
 
     public Long getCategoryId() {
@@ -54,7 +48,6 @@ public class ProductFilterModel {
         private BigDecimal priceFrom;
         private BigDecimal priceTo;
         private String name;
-        private String order;
         private Long categoryId;
         private int page;
         private int size;
@@ -74,10 +67,6 @@ public class ProductFilterModel {
             return this;
         }
 
-        public ProductFilterModelBuilder setOrder(String order) {
-            this.order = order;
-            return this;
-        }
 
         public ProductFilterModelBuilder setCategoryId(Long categoryId) {
             this.categoryId = categoryId;
@@ -95,7 +84,7 @@ public class ProductFilterModel {
         }
 
         public ProductFilterModel build() {
-            return new ProductFilterModel(priceFrom, priceTo, name, order, categoryId, page, size);
+            return new ProductFilterModel(priceFrom, priceTo, name, categoryId, page, size);
         }
     }
 }

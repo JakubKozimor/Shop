@@ -36,7 +36,6 @@ export class ProductClientService {
       filter.priceFrom = 0;
       filter.priceTo = 0;
       filter.name = "";
-      filter.order = "";
       filter.categoryId = 0;
     }
     console.log(filter);

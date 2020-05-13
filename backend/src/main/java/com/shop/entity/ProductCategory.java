@@ -16,6 +16,10 @@ public class ProductCategory {
     public ProductCategory() {
     }
 
+    public ProductCategory(String name) {
+        this.name = name;
+    }
+
     public Long getCategoryId() {
         return categoryId;
     }
